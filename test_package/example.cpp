@@ -6,11 +6,11 @@
 #include <sqlext.h>
 
 int main(int, char* []) {
-    std::cout << "Type of SQL_CHAR is " << SQL_CHAR << std::endl;
+    std::cout << "ODBC version " << SQL_SPEC_STRING << std::endl;
 }
 
 SQLRETURN driver_connect() {
-	SQLHDBC dbc{};
+	SQLHDBC dbc;
     SQLCHAR *connect_string = (unsigned char *)"DSN=mydsn;";
 
     return SQLDriverConnect(dbc, NULL, connect_string, SQL_NTS,
